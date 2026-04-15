@@ -1,0 +1,38 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+<div>
+    <h1>Dashboard Masyarakat</h1>
+    <p>{{ request.user.username }}</p>
+</div>
+
+<section>
+    
+    {% include "pengajuan/partials/form_pengajuan.html" %}
+</section>
+
+<section>
+    <h2>Daftar Pengajuan</h2>
+    {% for pengajuan in daftar_pengajuan %}
+        <p>
+            {{ pengajuan.masyarakat.nama }} | 
+            {{ pengajuan.bantuan.nama }} | 
+            <strong>
+                {{ pengajuan.status }}
+            </strong>
+            <a href="{% url 'pengajuan_detail' pengajuan.id %}">detail</a>
+        </p>
+    {% endfor %}
+</section>
+
+<div>
+    <h2>Daftar Bantuan</h2>
+    {% for bantuan in daftar_bantuan %}
+        <p>{{ bantuan.nama }}</p>
+    {% endfor %}
+</div>
+
+
+
+
+{% endblock %}

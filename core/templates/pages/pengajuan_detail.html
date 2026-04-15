@@ -1,0 +1,37 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+<div>
+    <h1>Dashboard Admin</h1>
+    <p>{{ request.user.username }}</p>
+</div>
+
+<div>
+    <h2>Detail Pengajuan</h2>
+        <p>
+            {{ pengajuan.masyarakat.nama }} | 
+            {{ pengajuan.bantuan.nama }} | 
+            <strong>
+                {{ pengajuan.status }}
+            </strong>
+            
+        </p>
+</div>
+
+<div>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert">
+            {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form_verifikasi.as_p }}
+        <button type="submit">SIMPAN</button>
+    </form>
+</div>
+
+
+{% endblock %}

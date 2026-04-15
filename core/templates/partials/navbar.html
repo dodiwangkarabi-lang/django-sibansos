@@ -1,0 +1,16 @@
+<nav>
+    <a href="{% url 'index' %}">index</a>
+    {% if user.is_authenticated %}
+    <form method="POST" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button type="submit">Logout</button>
+    </form>
+    {% else %}
+    <a href="{% url 'login' %}">login</a>
+    <a href="{% url 'register' %}">register</a>
+    {% endif %}
+
+    {% if user.is_authenticated %}
+    <p>user: {{ user.username }}</p>
+    {% endif %}
+</nav>

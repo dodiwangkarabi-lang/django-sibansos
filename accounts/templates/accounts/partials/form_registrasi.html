@@ -1,0 +1,13 @@
+<section>
+    <form action="" method="post">
+        {% csrf_token %}
+        
+        <h2>akun</h2>
+        {{ user_form.as_p }}
+        
+        <h2>data masyarakat</h2>
+        {{ masyarakat_form.as_p }}
+        
+        <button type="submit">register</button>
+    </form>
+</section>

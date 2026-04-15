@@ -1,0 +1,19 @@
+<section>
+    {% if messages %}
+    <div>
+        <h2>pesan</h2>
+        {% for message in messages %}
+            <div class="alert">
+            {{ message }}
+            </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <h2>Form Pengajuan</h2>
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form_pengajuan_bantuan.as_p }}
+        <button type="submit">submit</button>
+    </form>
+</section>
