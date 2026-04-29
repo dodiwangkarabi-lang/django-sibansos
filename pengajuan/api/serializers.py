@@ -3,6 +3,8 @@ from ..models import Pengajuan
 
 from bantuan.api.serializers import BantuanSerializer
 from masyarakat.api.serializers import MasyarakatSerializer
+from masyarakat.models import Masyarakat
+from bantuan.models import Bantuan
 
 class VerifikasiPermohonanSerializer(serializers.ModelSerializer):
     class Meta:
@@ -22,6 +24,17 @@ class PengajuanBantuanSerializer(serializers.ModelSerializer):
 class PengajuanSerializer(serializers.ModelSerializer):
     bantuan = BantuanSerializer(read_only=True)
     masyarakat = MasyarakatSerializer(read_only=True)
+    
+    bantuan_id = serializers.PrimaryKeyRelatedField(
+        queryset=Bantuan.objects.all(),
+        source='bantuan',
+        write_only=True
+    )
+    masyarakat_id = serializers.PrimaryKeyRelatedField(
+        queryset=Masyarakat.objects.all(),
+        source='masyarakat',
+        write_only=True
+    )
     
     class Meta:
         model = Pengajuan

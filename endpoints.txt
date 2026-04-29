@@ -1,0 +1,128 @@
+/	core.views.index	index
+/accounts/login/	accounts.views.login_view	login
+/accounts/logout/	django.contrib.auth.views.LogoutView	logout
+/accounts/register/	accounts.views.register	register
+/admin/	django.contrib.admin.sites.index	admin:index
+/admin/<app_label>/	django.contrib.admin.sites.app_index	admin:app_list
+/admin/<url>	django.contrib.admin.sites.catch_all_view
+/admin/auth/group/	django.contrib.admin.options.changelist_view	admin:auth_group_changelist
+/admin/auth/group/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/auth/group/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:auth_group_change
+/admin/auth/group/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:auth_group_delete
+/admin/auth/group/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:auth_group_history
+/admin/auth/group/add/	django.contrib.admin.options.add_view	admin:auth_group_add
+/admin/auth/user/	django.contrib.admin.options.changelist_view	admin:auth_user_changelist
+/admin/auth/user/<id>/password/	django.contrib.auth.admin.user_change_password	admin:auth_user_password_change
+/admin/auth/user/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/auth/user/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:auth_user_change
+/admin/auth/user/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:auth_user_delete
+/admin/auth/user/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:auth_user_history
+/admin/auth/user/add/	django.contrib.auth.admin.add_view	admin:auth_user_add
+/admin/autocomplete/	django.contrib.admin.sites.autocomplete_view	admin:autocomplete
+/admin/bantuan/bantuan/	django.contrib.admin.options.changelist_view	admin:bantuan_bantuan_changelist
+/admin/bantuan/bantuan/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/bantuan/bantuan/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:bantuan_bantuan_change
+/admin/bantuan/bantuan/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:bantuan_bantuan_delete
+/admin/bantuan/bantuan/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:bantuan_bantuan_history
+/admin/bantuan/bantuan/add/	django.contrib.admin.options.add_view	admin:bantuan_bantuan_add
+/admin/bantuan/kategori/	django.contrib.admin.options.changelist_view	admin:bantuan_kategori_changelist
+/admin/bantuan/kategori/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/bantuan/kategori/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:bantuan_kategori_change
+/admin/bantuan/kategori/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:bantuan_kategori_delete
+/admin/bantuan/kategori/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:bantuan_kategori_history
+/admin/bantuan/kategori/add/	django.contrib.admin.options.add_view	admin:bantuan_kategori_add
+/admin/jsi18n/	django.contrib.admin.sites.i18n_javascript	admin:jsi18n
+/admin/login/	django.contrib.admin.sites.login	admin:login
+/admin/logout/	django.contrib.admin.sites.logout	admin:logout
+/admin/masyarakat/masyarakat/	django.contrib.admin.options.changelist_view	admin:masyarakat_masyarakat_changelist
+/admin/masyarakat/masyarakat/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/masyarakat/masyarakat/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:masyarakat_masyarakat_change
+/admin/masyarakat/masyarakat/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:masyarakat_masyarakat_delete
+/admin/masyarakat/masyarakat/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:masyarakat_masyarakat_history
+/admin/masyarakat/masyarakat/add/	django.contrib.admin.options.add_view	admin:masyarakat_masyarakat_add
+/admin/masyarakat/wilayah/	django.contrib.admin.options.changelist_view	admin:masyarakat_wilayah_changelist
+/admin/masyarakat/wilayah/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/masyarakat/wilayah/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:masyarakat_wilayah_change
+/admin/masyarakat/wilayah/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:masyarakat_wilayah_delete
+/admin/masyarakat/wilayah/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:masyarakat_wilayah_history
+/admin/masyarakat/wilayah/add/	django.contrib.admin.options.add_view	admin:masyarakat_wilayah_add
+/admin/password_change/	django.contrib.admin.sites.password_change	admin:password_change
+/admin/password_change/done/	django.contrib.admin.sites.password_change_done	admin:password_change_done
+/admin/pengajuan/pengajuan/	django.contrib.admin.options.changelist_view	admin:pengajuan_pengajuan_changelist
+/admin/pengajuan/pengajuan/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/pengajuan/pengajuan/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:pengajuan_pengajuan_change
+/admin/pengajuan/pengajuan/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:pengajuan_pengajuan_delete
+/admin/pengajuan/pengajuan/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:pengajuan_pengajuan_history
+/admin/pengajuan/pengajuan/add/	django.contrib.admin.options.add_view	admin:pengajuan_pengajuan_add
+/admin/penyaluran/penerimabantuan/	django.contrib.admin.options.changelist_view	admin:penyaluran_penerimabantuan_changelist
+/admin/penyaluran/penerimabantuan/<path:object_id>/	django.views.generic.base.RedirectView
+/admin/penyaluran/penerimabantuan/<path:object_id>/change/	django.contrib.admin.options.change_view	admin:penyaluran_penerimabantuan_change
+/admin/penyaluran/penerimabantuan/<path:object_id>/delete/	django.contrib.admin.options.delete_view	admin:penyaluran_penerimabantuan_delete
+/admin/penyaluran/penerimabantuan/<path:object_id>/history/	django.contrib.admin.options.history_view	admin:penyaluran_penerimabantuan_history
+/admin/penyaluran/penerimabantuan/add/	django.contrib.admin.options.add_view	admin:penyaluran_penerimabantuan_add
+/admin/r/<path:content_type_id>/<path:object_id>/	django.contrib.contenttypes.views.shortcut	admin:view_on_site
+/api-accounts/	rest_framework.routers.APIRootView	api-root
+/api-accounts/<drf_format_suffix:format>	rest_framework.routers.APIRootView	api-root
+/api-accounts/me/	accounts.api.views.profile	me
+/api-accounts/profile/	accounts.api.views.ProfileView	profile
+/api-accounts/profile/change-password/	accounts.api.views.ChangePasswordView	change_password
+/api-accounts/registrasi/	accounts.api.views.RegistrasiView	registrasi
+/api-accounts/user/	accounts.api.views.UserViewSet	user-list
+/api-accounts/user/<pk>/	accounts.api.views.UserViewSet	user-detail
+/api-accounts/user/<pk>\.<format>/	accounts.api.views.UserViewSet	user-detail
+/api-accounts/user\.<format>/	accounts.api.views.UserViewSet	user-list
+/api-bantuan/	rest_framework.routers.APIRootView	api-root
+/api-bantuan/<drf_format_suffix:format>	rest_framework.routers.APIRootView	api-root
+/api-bantuan/bantuan/	bantuan.api.views.BantuanViewSet	bantuan-list
+/api-bantuan/bantuan/<pk>/	bantuan.api.views.BantuanViewSet	bantuan-detail
+/api-bantuan/bantuan/<pk>\.<format>/	bantuan.api.views.BantuanViewSet	bantuan-detail
+/api-bantuan/bantuan\.<format>/	bantuan.api.views.BantuanViewSet	bantuan-list
+/api-bantuan/kategori/	bantuan.api.views.KategoriViewSet	kategori-list
+/api-bantuan/kategori/<pk>/	bantuan.api.views.KategoriViewSet	kategori-detail
+/api-bantuan/kategori/<pk>\.<format>/	bantuan.api.views.KategoriViewSet	kategori-detail
+/api-bantuan/kategori\.<format>/	bantuan.api.views.KategoriViewSet	kategori-list
+/api-bantuan/penerima-bantuan/<int:bantuan_id>/	bantuan.api.views.PenerimaBantuanView	penerima_bantuan_api
+/api-core/rangkuman/	core.api.views.RangkumanView	rangkuman
+/api-masyarakat/	rest_framework.routers.APIRootView	api-root
+/api-masyarakat/<drf_format_suffix:format>	rest_framework.routers.APIRootView	api-root
+/api-masyarakat/masyarakat/	masyarakat.api.views.MasyarakatViewSet	masyarakat-list
+/api-masyarakat/masyarakat/<pk>/	masyarakat.api.views.MasyarakatViewSet	masyarakat-detail
+/api-masyarakat/masyarakat/<pk>\.<format>/	masyarakat.api.views.MasyarakatViewSet	masyarakat-detail
+/api-masyarakat/masyarakat\.<format>/	masyarakat.api.views.MasyarakatViewSet	masyarakat-list
+/api-masyarakat/wilayah/	masyarakat.api.views.WilayahViewSet	wilayah-list
+/api-masyarakat/wilayah/<pk>/	masyarakat.api.views.WilayahViewSet	wilayah-detail
+/api-masyarakat/wilayah/<pk>\.<format>/	masyarakat.api.views.WilayahViewSet	wilayah-detail
+/api-masyarakat/wilayah\.<format>/	masyarakat.api.views.WilayahViewSet	wilayah-list
+/api-pengajuan/	rest_framework.routers.APIRootView	api-root
+/api-pengajuan/<drf_format_suffix:format>	rest_framework.routers.APIRootView	api-root
+/api-pengajuan/daftar-pengajuan-masyarakat/	pengajuan.api.views.DaftarPengajuanMasyarakatView	daftar_pengajuan_masyarakat_api
+/api-pengajuan/daftar-pengajuan/	pengajuan.api.views.DaftarPengajuanView	daftar_pengajuan_api
+/api-pengajuan/pengajuan-bantuan/	pengajuan.api.views.PengajuanBantuanView	pengajuan_bantuan_api
+/api-pengajuan/pengajuan-revisi-masyarakat/<int:pengajuan_id>/	pengajuan.api.views.PengajuanRevisiMasyarakatView	pengajuan_revisi_masyarakat_api
+/api-pengajuan/pengajuan/	pengajuan.api.views.PengajuanViewSet	pengajuan-list
+/api-pengajuan/pengajuan/<pk>/	pengajuan.api.views.PengajuanViewSet	pengajuan-detail
+/api-pengajuan/pengajuan/<pk>\.<format>/	pengajuan.api.views.PengajuanViewSet	pengajuan-detail
+/api-pengajuan/pengajuan/full/	pengajuan.api.views.PengajuanViewSet	pengajuan-full
+/api-pengajuan/pengajuan/full\.<format>/	pengajuan.api.views.PengajuanViewSet	pengajuan-full
+/api-pengajuan/pengajuan/masyarakat/	pengajuan.api.views.PengajuanViewSet	pengajuan-masyarakat
+/api-pengajuan/pengajuan/masyarakat\.<format>/	pengajuan.api.views.PengajuanViewSet	pengajuan-masyarakat
+/api-pengajuan/pengajuan/riwayat-pengajuan/	pengajuan.api.views.PengajuanViewSet	pengajuan-riwayat-pengajuan
+/api-pengajuan/pengajuan/riwayat-pengajuan\.<format>/	pengajuan.api.views.PengajuanViewSet	pengajuan-riwayat-pengajuan
+/api-pengajuan/pengajuan\.<format>/	pengajuan.api.views.PengajuanViewSet	pengajuan-list
+/api-pengajuan/ringkasan-pengajuan/	pengajuan.api.views.ringkasan_pengajuan_view	ringkasan_pengajuan_api
+/api-pengajuan/verifikasi-permohonan/<int:pengajuan_id>/	pengajuan.api.views.VerifikasiPermohonanView	verifikasi_pengajuan_api
+/api-penyaluran/	rest_framework.routers.APIRootView	api-root
+/api-penyaluran/<drf_format_suffix:format>	rest_framework.routers.APIRootView	api-root
+/api-penyaluran/penerima-bantuan/	penyaluran.api.views.PenerimaBantuanViewSet	penerimabantuan-list
+/api-penyaluran/penerima-bantuan/<pk>/	penyaluran.api.views.PenerimaBantuanViewSet	penerimabantuan-detail
+/api-penyaluran/penerima-bantuan/<pk>\.<format>/	penyaluran.api.views.PenerimaBantuanViewSet	penerimabantuan-detail
+/api-penyaluran/penerima-bantuan/pdf/	penyaluran.api.views.PenerimaBantuanViewSet	penerimabantuan-pdf
+/api-penyaluran/penerima-bantuan/pdf\.<format>/	penyaluran.api.views.PenerimaBantuanViewSet	penerimabantuan-pdf
+/api-penyaluran/penerima-bantuan\.<format>/	penyaluran.api.views.PenerimaBantuanViewSet	penerimabantuan-list
+/api/token/	rest_framework_simplejwt.views.TokenObtainPairView
+/api/token/refresh/	rest_framework_simplejwt.views.TokenRefreshView
+/api/token/verify/	rest_framework_simplejwt.views.TokenVerifyView	token_verify
+/dashboard_admin/	core.views.dashboard_admin	dashboard_admin
+/dashboard_masyarakat/	core.views.dashboard_masyarakat	dashboard_masyarakat
+/media/<path>	django.views.static.serve
+/pengajuan_detail/<int:pengajuan_id>/	core.views.pengajuan_detail_view	pengajuan_detail

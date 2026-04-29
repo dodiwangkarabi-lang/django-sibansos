@@ -7,6 +7,10 @@ from django.urls import path
 router = DefaultRouter()
 router.register(r"penerima-bantuan", PenerimaBantuanViewSet)
 
+urlpatterns = [
+    # path("penerima-bantuan/pdf/", PenerimaBantuanViewSet.as_view({"get": "pdf"}), name="penerima_bantuan_pdf_api"),
+]
+
 # urlpatterns = [
 #     path("pengajuan-bantuan/", PengajuanBantuanView.as_view(), name="pengajuan_bantuan_api"),
 #     path("daftar-pengajuan/", DaftarPengajuanView.as_view(), name="daftar_pengajuan_api"),
@@ -14,4 +18,5 @@ router.register(r"penerima-bantuan", PenerimaBantuanViewSet)
 #     path("daftar-pengajuan-masyarakat/", DaftarPengajuanMasyarakatView.as_view(), name="daftar_pengajuan_masyarakat_api"),
 # ]
 
-urlpatterns = router.urls
+# urlpatterns = router.urls
+urlpatterns += router.urls

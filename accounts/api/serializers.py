@@ -65,10 +65,17 @@ class UserApiSerializer(serializers.ModelSerializer):
 
 class ProfileSerializer(serializers.ModelSerializer):
     # user = UserApiSerializer(read_only=True)
+    username = serializers.CharField(
+        source="user.username",
+        required=False,
+        allow_null=True,
+        allow_blank=True
+    )
 
     class Meta:
         model = Masyarakat
         fields = [
+            "id",
             "nik",
             "nama",
             # "user",
@@ -87,7 +94,24 @@ class ProfileSerializer(serializers.ModelSerializer):
             "wilayah",
             "created_at",
             "updated_at",
+            "username"
         ]
+        
+    def update(self, instance, validated_data):
+        user_data = validated_data.pop('user', {})
+
+        # update profile
+        for attr, value in validated_data.items():
+            setattr(instance, attr, value)
+        instance.save()
+
+        # update username
+        user = instance.user
+        if 'username' in user_data:
+            user.username = user_data['username']
+            user.save()
+
+        return instance
         
 class ChangePasswordSerializer(serializers.Serializer):
     old_password = serializers.CharField(required=True)

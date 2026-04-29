@@ -125,14 +125,14 @@ class PengajuanBantuanView(APIView):
 class PengajuanViewSet(ModelViewSet):
     # queryset = Pengajuan.objects.all() # ini awal
     queryset = Pengajuan.objects.select_related("masyarakat", "bantuan").all()
-    # serializer_class = PengajuanSerializer
+    serializer_class = PengajuanSerializer
     
     # authentication_classes = [TokenAuthentication]
     # permission_classes = [IsAuthenticated]
     
     def list(self, request, *args, **kwargs):
-        print("AUTH HEADER:", request.headers.get("Authorization"))
-        print("USER:", request.user)
+        # print("AUTH HEADER:", request.headers.get("Authorization"))
+        # print("USER:", request.user)
 
         return super().list(request, *args, **kwargs)
     

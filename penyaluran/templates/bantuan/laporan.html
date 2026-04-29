@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      /* ===== GLOBAL ===== */
+      body {
+        font-family: Arial, sans-serif;
+        font-size: 12px;
+      }
+
+      .container {
+        width: 100%;
+      }
+
+      /* ===== KOP SURAT ===== */
+      .kop {
+        text-align: center;
+        border-bottom: 2px solid black;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+      }
+
+      .kop h1 {
+        margin: 0;
+        font-size: 16px;
+      }
+
+      .kop h2 {
+        margin: 0;
+        font-size: 14px;
+      }
+
+      .kop p {
+        margin: 2px;
+        font-size: 12px;
+      }
+
+      /* ===== JUDUL ===== */
+      .judul {
+        text-align: center;
+        margin-bottom: 45px;
+      }
+
+      .judul h3 {
+        margin: 0;
+        text-decoration: none;
+      }
+
+      /* ===== TABEL ===== */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      table thead {
+        background-color: #eeeeee;
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid black;
+      }
+
+      th,
+      td {
+        padding: 6px;
+        text-align: left;
+        font-size: 11px;
+      }
+
+      th {
+        text-align: center;
+      }
+
+      /* ===== FOOTER ===== */
+      .footer {
+        margin-top: 30px;
+        text-align: right;
+      }
+
+      .ttd {
+        margin-top: 60px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+
+      <!-- ===== JUDUL ===== -->
+      <div class="judul">
+        <h3 style="font-weight: bold; padding-bottom: 20px;">LAPORAN PENYALURAN BANTUAN</h3>
+      </div>
+
+      <!-- ===== TABEL DATA ===== -->
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 5%">No</th>
+            <th style="width: 20%">NIK Penerima</th>
+            <th style="width: 30%">Nama Penerima</th>
+            <th style="width: 30%">Bantuan</th>
+            <th style="width: 15%">Tanggal</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in data %}
+          <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ item.masyarakat.nik }}</td>
+            <td>{{ item.masyarakat.nama }}</td>
+            <td>{{ item.bantuan.nama }}</td>
+            <td>{{ item.tanggal_terima|date:"d-m-Y" }}</td>
+          </tr>
+          {% empty %}
+          <tr>
+            <td colspan="5" style="text-align: center">Tidak ada data</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+      <!-- ===== FOOTER ===== -->
+      
+    </div>
+  </body>
+</html>

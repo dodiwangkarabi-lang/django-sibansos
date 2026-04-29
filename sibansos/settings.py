@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     "pengajuan",
     "rest_framework",
     "core",
-    "corsheaders"
+    "corsheaders",
+    "django_extensions",
 ]
 
 MIDDLEWARE = [
@@ -64,7 +65,7 @@ ROOT_URLCONF = "sibansos.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [BASE_DIR / "templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
