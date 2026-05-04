@@ -47,6 +47,7 @@ class PengajuanFullSerializer(serializers.ModelSerializer):
         
 class PengajuanCustomSerializer(serializers.ModelSerializer):
     bantuan = BantuanSerializer(read_only=True)
+    masyarakat = MasyarakatSerializer(read_only=True)
     
     class Meta:
         model = Pengajuan

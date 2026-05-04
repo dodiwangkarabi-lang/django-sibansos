@@ -72,11 +72,17 @@ class VerifikasiPermohonanView(APIView):
 class DaftarPengajuanView(APIView):
     def get(self, request):
         try:
-            daftar_pengajuan = Pengajuan.objects.filter(masyarakat=request.user.masyarakat)
-            daftar_pengajuan = daftar_pengajuan.select_related("bantuan").all()
-            serializer = PengajuanCustomSerializer(daftar_pengajuan, many=True)
+            masyarakat = request.user.masyarakat
+            daftar_pengajuan = (
+                Pengajuan.objects
+                .filter(masyarakat=masyarakat)
+                .select_related("bantuan", "masyarakat")
+                .order_by("-tanggal_pengajuan", "-id")
+            )
+            
+            serializer = PengajuanSerializer(daftar_pengajuan, many=True)
         except:
-            serializer = PengajuanCustomSerializer([])
+            serializer = PengajuanSerializer([])
             
         payload = {
             "message": "Daftar pengajuan",
