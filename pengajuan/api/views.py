@@ -25,6 +25,9 @@ from .serializers import (
 
 from rest_framework.parsers import MultiPartParser, FormParser
 
+# services
+from pengajuan.services.services import PengajuanService
+
 class PengajuanRevisiMasyarakatView(APIView):
     def post(self, request, pengajuan_id):
         pengajuan = get_object_or_404(Pengajuan, id=pengajuan_id)
@@ -136,11 +139,32 @@ class PengajuanViewSet(ModelViewSet):
     # authentication_classes = [TokenAuthentication]
     # permission_classes = [IsAuthenticated]
     
+    def update(self, request, *args, **kwargs):
+        pengajuan = self.get_object()
+        
+        
+        
+        serializer = self.get_serializer(pengajuan, data=request.data, partial=False)
+        serializer.is_valid(raise_exception=True)
+        self.perform_update(serializer)
+        
+        # logika custom
+        pengajuan = serializer.instance
+        service = PengajuanService()
+        service.verifikasi_pengajuan(pengajuan) # side effect terhadap penerima bantuan
+       
+        
+        return Response({
+            "message": "Pengajuan berhasil diupdate",
+            "data": serializer.data
+        }, status=status.HTTP_200_OK)
+    
     def list(self, request, *args, **kwargs):
         # print("AUTH HEADER:", request.headers.get("Authorization"))
         # print("USER:", request.user)
 
         return super().list(request, *args, **kwargs)
+    
     
     # def get_queryset(self):
     #     return Pengajuan.objects.filter(id=1)
