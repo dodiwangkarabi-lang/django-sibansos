@@ -65,9 +65,12 @@
 /admin/r/<path:content_type_id>/<path:object_id>/       django.contrib.contenttypes.views.shortcut      admin:view_on_site
 /api-accounts/  rest_framework.routers.APIRootView      api-root
 /api-accounts/<drf_format_suffix:format>        rest_framework.routers.APIRootView      api-root
+/api-accounts/aktivasi-akun/    accounts.api.views.AktivasiAkunView     aktivasi_akun
+/api-accounts/ganti-sandi/      accounts.api.views.GantiSandiView       ganti_sandi
 /api-accounts/me/       accounts.api.views.profile      me
 /api-accounts/profile/  accounts.api.views.ProfileView  profile
 /api-accounts/profile/change-password/  accounts.api.views.ChangePasswordView   change_password
+/api-accounts/registrasi-akun/  accounts.api.views.RegistrasiAkunView   registrasi_akun
 /api-accounts/registrasi/       accounts.api.views.RegistrasiView       registrasi
 /api-accounts/user/     accounts.api.views.UserViewSet  user-list
 /api-accounts/user/<pk>/        accounts.api.views.UserViewSet  user-detail
@@ -118,10 +121,12 @@
 /api-penyaluran/penerima-bantuan/       penyaluran.api.views.PenerimaBantuanViewSet     penerimabantuan-list
 /api-penyaluran/penerima-bantuan/<pk>/  penyaluran.api.views.PenerimaBantuanViewSet     penerimabantuan-detail
 /api-penyaluran/penerima-bantuan/<pk>\.<format>/        penyaluran.api.views.PenerimaBantuanViewSet     penerimabantuan-detail
+/api-penyaluran/penerima-bantuan/excel/ penyaluran.api.views.PenerimaBantuanViewSet     penerimabantuan-excel
+/api-penyaluran/penerima-bantuan/excel\.<format>/       penyaluran.api.views.PenerimaBantuanViewSet     penerimabantuan-excel
 /api-penyaluran/penerima-bantuan/pdf/   penyaluran.api.views.PenerimaBantuanViewSet     penerimabantuan-pdf
 /api-penyaluran/penerima-bantuan/pdf\.<format>/ penyaluran.api.views.PenerimaBantuanViewSet     penerimabantuan-pdf
 /api-penyaluran/penerima-bantuan\.<format>/     penyaluran.api.views.PenerimaBantuanViewSet     penerimabantuan-list
-/api/token/     rest_framework_simplejwt.views.TokenObtainPairView
+/api/token/     accounts.api.views.CustomTokenObtainPairView
 /api/token/refresh/     rest_framework_simplejwt.views.TokenRefreshView
 /api/token/verify/      rest_framework_simplejwt.views.TokenVerifyView  token_verify
 /dashboard_admin/       core.views.dashboard_admin      dashboard_admin

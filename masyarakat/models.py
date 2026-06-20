@@ -23,6 +23,8 @@ class Masyarakat(models.Model):
     no_kk = models.CharField(max_length=16, unique=False, null=True, blank=True)
     nama = models.CharField(max_length=100, null=True, blank=True)
     
+    foto_ktp = models.ImageField(null=True, blank=True, upload_to='ktp/')
+    
     jenis_kelamin = models.CharField(max_length=100, choices=JENIS_KELAMIN, null=True, blank=True)
     tempat_lahir = models.CharField(max_length=100, null=True, blank=True)
     tanggal_lahir = models.DateField(null=True, blank=True)
