@@ -1,3 +1,5 @@
+ini adalah file bat yang saya buat DODIMAN TAKIMPOO
+Press any key to continue . . .
 
 (globalenv) D:\PROGRAMMING\projects-skripsi\sibansos\backend\sibansos>python manage.py show_urls
 /       core.views.index        index
@@ -66,7 +68,11 @@
 /api-accounts/  rest_framework.routers.APIRootView      api-root
 /api-accounts/<drf_format_suffix:format>        rest_framework.routers.APIRootView      api-root
 /api-accounts/aktivasi-akun/    accounts.api.views.AktivasiAkunView     aktivasi_akun
+/api-accounts/daftar-akun-belum-aktif/  accounts.api.views.DaftarAkunBelumAktifView     daftar_akun_belum_aktif
+/api-accounts/delete-akun/<int:user_id>/        accounts.api.views.DeleteAkunView       delete_akun
+/api-accounts/detail-akun-belum-aktif/<int:user_id>/    accounts.api.views.DetailAkunBelumAktifView     detail_akun_belum_aktif
 /api-accounts/ganti-sandi/      accounts.api.views.GantiSandiView       ganti_sandi
+/api-accounts/lupa-sandi/       accounts.api.views.LupaSandiView        lupa_sandi
 /api-accounts/me/       accounts.api.views.profile      me
 /api-accounts/profile/  accounts.api.views.ProfileView  profile
 /api-accounts/profile/change-password/  accounts.api.views.ChangePasswordView   change_password
@@ -126,6 +132,9 @@
 /api-penyaluran/penerima-bantuan/pdf/   penyaluran.api.views.PenerimaBantuanViewSet     penerimabantuan-pdf
 /api-penyaluran/penerima-bantuan/pdf\.<format>/ penyaluran.api.views.PenerimaBantuanViewSet     penerimabantuan-pdf
 /api-penyaluran/penerima-bantuan\.<format>/     penyaluran.api.views.PenerimaBantuanViewSet     penerimabantuan-list
+/api/docs/      drf_spectacular.views.SpectacularSwaggerView    swagger-ui
+/api/redoc/     drf_spectacular.views.SpectacularRedocView      redoc
+/api/schema/    drf_spectacular.views.SpectacularAPIView        schema
 /api/token/     accounts.api.views.CustomTokenObtainPairView
 /api/token/refresh/     rest_framework_simplejwt.views.TokenRefreshView
 /api/token/verify/      rest_framework_simplejwt.views.TokenVerifyView  token_verify

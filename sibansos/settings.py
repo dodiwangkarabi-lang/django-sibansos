@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     "core",
     "corsheaders",
     "django_extensions",
+    "drf_spectacular",
 ]
 
 MIDDLEWARE = [
@@ -150,7 +151,15 @@ LOGOUT_REDIRECT_URL = "/login/"
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": [
         "rest_framework_simplejwt.authentication.JWTAuthentication",
-    ]
+    ],
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+}
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "API Pengajuan Bantuan",
+    "DESCRIPTION": "Dokumentasi API Sistem Pengajuan Bantuan",
+    "VERSION": "1.0.0",
+    "SERVE_INCLUDE_SCHEMA": False,
 }
 
 SIMPLE_JWT = {

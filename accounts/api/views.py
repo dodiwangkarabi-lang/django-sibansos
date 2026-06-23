@@ -43,6 +43,7 @@ class DaftarAkunBelumAktifView(APIView):
     
     def get(self, request):
         user = User.objects.select_related("masyarakat").filter(is_active=False).all()
+        # user = User.objects.filter(is_active=False).all()
         serializers = CustomUserSerializer(user, many=True, context={"request": request})
         
         return Response({

@@ -51,7 +51,12 @@ class PengajuanCustomSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Pengajuan
-        fields = ['id', 'status', 'catatan', 'bantuan', 'file_pengajuan', 'tanggal_pengajuan', 'tanggal_diperbarui']
+        fields = [
+            'id', 'status', 'catatan',
+            'bantuan', 'file_pengajuan',
+            'tanggal_pengajuan', 'tanggal_diperbarui',
+            'masyarakat'
+        ]
 
 class RingkasanSerializer(serializers.Serializer):
     total = serializers.IntegerField()
