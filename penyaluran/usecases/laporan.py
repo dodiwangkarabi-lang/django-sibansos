@@ -6,7 +6,7 @@ from openpyxl.styles import Border, Side, Font
 
 from reportlab.platypus import SimpleDocTemplate, Image, Table, TableStyle, Spacer, Paragraph
 from reportlab.lib import colors
-from reportlab.lib.pagesizes import A4
+from reportlab.lib.pagesizes import A4, letter, legal
 from reportlab.lib.styles import getSampleStyleSheet
 
 from django.conf import settings
@@ -55,9 +55,9 @@ def pengajuan_to_table(queryset):
         data, hAlign="LEFT",
         colWidths=[
             30,   # No
-            70,   # NIK
+            105,   # NIK
             80,  # Nama
-            80,  # Alamat
+            70,  # Alamat
             80,   # No HP
             80,  # Jenis Bantuan
             65,   # Tanggal
@@ -143,7 +143,7 @@ def build_pdf(df, **kwargs):
     buffer = io.BytesIO()
     
     doc = SimpleDocTemplate(
-        buffer, pagesize=A4,
+        buffer, pagesize=legal,
         leftMargin=30,
         rightMargin=30,
         topMargin=30,
@@ -215,7 +215,12 @@ def build_pdf(df, **kwargs):
 
     # 3. TANDA TANGAN DI AKHIR
     ttd_img = settings.MEDIA_ROOT / "lainnya" / "ttd.png"
-    signature = Image(ttd_img, width=150, height=80)
+    # signature = Image(ttd_img, width=150, height=80)
+    signature = Image(ttd_img)
+    scale = 0.6
+    signature.drawWidth = signature.imageWidth * scale
+    signature.drawHeight = signature.imageHeight * scale
+    
     # sisipkan ke sebelah kanan
     signature.hAlign = "RIGHT"
 

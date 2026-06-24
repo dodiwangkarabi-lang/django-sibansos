@@ -36,34 +36,34 @@ class PenerimaBantuanViewSet(ModelViewSet):
     
     @action(detail=False, methods=["get"], url_path="excel")
     def excel(self, request):
-        # data = self.get_queryset()
-        
-        # uc = Laporan()
-        # laporan = uc.laporan_excel() # BytesIO
-        
-        
-        # # content excel
-        # response = HttpResponse(laporan, content_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
-        # response['Content-Disposition'] = 'attachment; filename="laporan.xlsx"'
-        
-        # return response
-        
-        # --------------------------------------------------tambahan--------------------
         data = self.get_queryset()
         
         uc = Laporan()
-        laporan = uc.laporan_file(data) # BytesIO
-        
-        # content pdf
-        response = HttpResponse(laporan, content_type="application/pdf")
-        response['Content-Disposition'] = 'attachment; filename="laporan.pdf"'
+        laporan = uc.laporan_excel() # BytesIO
         
         
         # content excel
-        # response = HttpResponse(laporan, content_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
-        # response['Content-Disposition'] = 'attachment; filename="laporan.xlsx"'
+        response = HttpResponse(laporan, content_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
+        response['Content-Disposition'] = 'attachment; filename="laporan.xlsx"'
         
         return response
+        
+        # --------------------------------------------------tambahan--------------------
+        # data = self.get_queryset()
+        
+        # uc = Laporan()
+        # laporan = uc.laporan_file(data) # BytesIO
+        
+        # # content pdf
+        # response = HttpResponse(laporan, content_type="application/pdf")
+        # response['Content-Disposition'] = 'attachment; filename="laporan.pdf"'
+        
+        
+        # # content excel
+        # # response = HttpResponse(laporan, content_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
+        # # response['Content-Disposition'] = 'attachment; filename="laporan.xlsx"'
+        
+        # return response
     
     @action(detail=False, methods=["get"], url_path="file")
     def file(self, request):
