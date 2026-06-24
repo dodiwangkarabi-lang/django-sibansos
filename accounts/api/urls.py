@@ -11,6 +11,7 @@ router = DefaultRouter()
 router.register(r"user", UserViewSet)
 
 urlpatterns = [
+    path('update-email/', views.UpdateEmailView.as_view(), name='update_email'),
     path('detail-akun-belum-aktif/<int:user_id>/', views.DetailAkunBelumAktifView.as_view(), name='detail_akun_belum_aktif'),
     path('daftar-akun-belum-aktif/', views.DaftarAkunBelumAktifView.as_view(), name='daftar_akun_belum_aktif'),
     path('lupa-sandi/', views.LupaSandiView.as_view(), name='lupa_sandi'),

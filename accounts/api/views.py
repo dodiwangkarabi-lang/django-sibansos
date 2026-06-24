@@ -20,10 +20,37 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.views import TokenObtainPairView
 
 # serializer
-from .serializers import CustomTokenObtainPairSerializer, CustomUserSerializer, LupaPasswordSerialzer
+from .serializers import (
+    CustomTokenObtainPairSerializer, CustomUserSerializer, LupaPasswordSerialzer,
+    GantiEmailSerializer
+)
 
 # usecase
 from accounts.usecases.auth import Auth
+
+class UpdateEmailView(APIView):
+    permission_classes = [IsAuthenticated]
+    
+    def post(self, request):
+        user = request.user
+        form = GantiEmailSerializer(data=request.data)
+        if not form.is_valid():
+            return Response({
+                "success": False,
+                "message": "Email gagal diubah",
+                "data": form.errors
+            })
+        
+        data = form.validated_data
+        
+        user.email = data.get("email")
+        user.save()
+        
+        return Response({
+            "success": True,
+            "message": "Email berhasil diubah",
+            "data": None
+        })
 
 class DetailAkunBelumAktifView(APIView):
     permission_classes = [IsAuthenticated]

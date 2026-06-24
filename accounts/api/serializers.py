@@ -9,6 +9,20 @@ from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 
 from rest_framework import serializers
 
+class GantiEmailSerializer(serializers.Serializer):
+    email = serializers.EmailField(required=True)
+
+class UserProfileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = [
+            "id",
+            "username",
+            # "first_name",
+            # "last_name",
+            "email",
+        ]
+
 class LupaPasswordSerialzer(serializers.Serializer):
     email = serializers.EmailField(required=True)
 

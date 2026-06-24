@@ -8,5 +8,9 @@ class PenerimaBantuan(models.Model):
     catatan = models.TextField(null=True, blank=True) # catatan, misalnya kondisi penerima
     aktif = models.BooleanField(default=True)  # Status penerima aktif/tidak
     
+    # ordering
+    class Meta:
+        ordering = ['-tanggal_terima']
+    
     def __str__(self):
         return f"{self.masyarakat} - {self.bantuan}"

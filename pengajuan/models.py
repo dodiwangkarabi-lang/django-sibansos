@@ -28,6 +28,10 @@ class Pengajuan(models.Model):
     tanggal_pengajuan = models.DateField(auto_now_add=True)
     tanggal_diperbarui = models.DateField(auto_now=True)
     
+    # ordering
+    class Meta:
+        ordering = ["-tanggal_pengajuan"]
+    
     def __str__(self):
         return f"id: {self.id} {self.masyarakat} - {self.bantuan}"
     
