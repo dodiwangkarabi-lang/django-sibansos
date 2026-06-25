@@ -1,5 +1,3 @@
-ini adalah file bat yang saya buat DODIMAN TAKIMPOO
-Press any key to continue . . .
 
 (globalenv) D:\PROGRAMMING\projects-skripsi\sibansos\backend\sibansos>python manage.py show_urls
 /       core.views.index        index
@@ -78,6 +76,7 @@ Press any key to continue . . .
 /api-accounts/profile/change-password/  accounts.api.views.ChangePasswordView   change_password
 /api-accounts/registrasi-akun/  accounts.api.views.RegistrasiAkunView   registrasi_akun
 /api-accounts/registrasi/       accounts.api.views.RegistrasiView       registrasi
+/api-accounts/update-email/     accounts.api.views.UpdateEmailView      update_email
 /api-accounts/user/     accounts.api.views.UserViewSet  user-list
 /api-accounts/user/<pk>/        accounts.api.views.UserViewSet  user-detail
 /api-accounts/user/<pk>\.<format>/      accounts.api.views.UserViewSet  user-detail
@@ -120,6 +119,7 @@ Press any key to continue . . .
 /api-pengajuan/pengajuan/riwayat-pengajuan/     pengajuan.api.views.PengajuanViewSet    pengajuan-riwayat-pengajuan
 /api-pengajuan/pengajuan/riwayat-pengajuan\.<format>/   pengajuan.api.views.PengajuanViewSet    pengajuan-riwayat-pengajuan
 /api-pengajuan/pengajuan\.<format>/     pengajuan.api.views.PengajuanViewSet    pengajuan-list
+/api-pengajuan/persyarakat-bantuan/      pengajuan.api.views.PersyaratanBantuanView      persyaratan_bantuan_api
 /api-pengajuan/ringkasan-pengajuan/     pengajuan.api.views.ringkasan_pengajuan_view    ringkasan_pengajuan_api
 /api-pengajuan/verifikasi-permohonan/<int:pengajuan_id>/        pengajuan.api.views.VerifikasiPermohonanView    verifikasi_pengajuan_api
 /api-penyaluran/        rest_framework.routers.APIRootView      api-root
@@ -129,6 +129,8 @@ Press any key to continue . . .
 /api-penyaluran/penerima-bantuan/<pk>\.<format>/        penyaluran.api.views.PenerimaBantuanViewSet     penerimabantuan-detail
 /api-penyaluran/penerima-bantuan/excel/ penyaluran.api.views.PenerimaBantuanViewSet     penerimabantuan-excel
 /api-penyaluran/penerima-bantuan/excel\.<format>/       penyaluran.api.views.PenerimaBantuanViewSet     penerimabantuan-excel
+/api-penyaluran/penerima-bantuan/file/  penyaluran.api.views.PenerimaBantuanViewSet     penerimabantuan-file
+/api-penyaluran/penerima-bantuan/file\.<format>/        penyaluran.api.views.PenerimaBantuanViewSet     penerimabantuan-file
 /api-penyaluran/penerima-bantuan/pdf/   penyaluran.api.views.PenerimaBantuanViewSet     penerimabantuan-pdf
 /api-penyaluran/penerima-bantuan/pdf\.<format>/ penyaluran.api.views.PenerimaBantuanViewSet     penerimabantuan-pdf
 /api-penyaluran/penerima-bantuan\.<format>/     penyaluran.api.views.PenerimaBantuanViewSet     penerimabantuan-list

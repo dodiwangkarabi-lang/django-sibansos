@@ -28,6 +28,25 @@ from rest_framework.parsers import MultiPartParser, FormParser
 # services
 from pengajuan.services.services import PengajuanService
 
+from django.conf import settings
+from django.http import FileResponse, Http404
+
+class PersyaratanBantuanView(APIView):
+    def get(self, request):
+        file_path = settings.MEDIA_ROOT / "lainnya" / "persyaratan_bantuan.pdf"
+        
+        if not file_path.exists():
+            raise Http404("File tidak ditemukan")
+        
+        return FileResponse(
+            open(file_path, "rb"),
+            content_type="application/pdf",
+            as_attachment=True,
+            filename="persyaratan_bantuan.pdf"
+        )
+        
+        
+
 class PengajuanRevisiMasyarakatView(APIView):
     def post(self, request, pengajuan_id):
         pengajuan = get_object_or_404(Pengajuan, id=pengajuan_id)

@@ -2,7 +2,8 @@ from rest_framework.routers import DefaultRouter
 from .views import (
     PengajuanViewSet, PengajuanBantuanView, DaftarPengajuanView,
     VerifikasiPermohonanView, DaftarPengajuanMasyarakatView,
-    ringkasan_pengajuan_view, PengajuanRevisiMasyarakatView
+    ringkasan_pengajuan_view, PengajuanRevisiMasyarakatView,
+    PersyaratanBantuanView
 )
 from django.urls import path
 
@@ -10,6 +11,7 @@ router = DefaultRouter()
 router.register(r"pengajuan", PengajuanViewSet)
 
 urlpatterns = [
+    path("persyarakat-bantuan/", PersyaratanBantuanView.as_view(), name="persyaratan_bantuan_api"),
     path("pengajuan-bantuan/", PengajuanBantuanView.as_view(), name="pengajuan_bantuan_api"),
     path("daftar-pengajuan/", DaftarPengajuanView.as_view(), name="daftar_pengajuan_api"),
     path("verifikasi-permohonan/<int:pengajuan_id>/", VerifikasiPermohonanView.as_view(), name="verifikasi_pengajuan_api"),
